@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+$lightGray: #999;
+
 /* Universal */
 
 html {
@@ -46,7 +48,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: lightGray;
 }
 
 p {
@@ -78,29 +80,26 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
-}
+  color: lightGray;
+  a {
+    color: #555;
+    &:hover {
+      color:#222;
+    }
+  }
 
-footer a {
-  color: #555;
-}
+  small {
+    float: left;
+  }
 
-footer a:hover {
-  color:#222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }
 
 
