@@ -164,5 +164,20 @@ input, textarea, select, .uneditable-input
   @include box_sizing;
 }
 
+#error_explanation 
+{
+  color: #f00;
+  ul {
+    list_style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors 
+{
+  @extend .control_group;
+  @extent .error;
+}
+
 
 
