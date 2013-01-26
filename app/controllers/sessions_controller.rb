@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
 			sign_in user # A helper function
 			redirect_to user
 		else 
-			# will pass the flash variable to the view
-			flash.now[:error] = 'Invalid email/password combination' # Not quite right
+			# will pass the flash variable to the view. flash.now will only show flash on one request
+			flash.now[:error] = 'Invalid email/password combination' 
 			render 'new'
 		end
 	end
