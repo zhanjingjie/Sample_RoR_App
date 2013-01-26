@@ -10,6 +10,7 @@
 <body>
   <%= render 'layouts/header' %>
   <div class="container">
+    <!-- Display any flash messages passed from the controller here. -->
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>

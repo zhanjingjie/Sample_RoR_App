@@ -8,12 +8,20 @@ module SessionsHelper
 		self.current_user = user
 	end
 
+	# Helper used by the view to test if the user is signed in
+	def signed_in?
+		!current_user.nil?
+	end
+
 	def current_user=(user)
 		# Store the user for later use
 		@current_user = user
 	end
 
 	def current_user
+		# @current_user. With this code the signin status would be forgotten when going to another page.
+		# "or equal" will set the instance variable only if it is undefined.
+		# So won't hit the database very often. Good if more than one requests on a page.
 		@current_user ||= User.find_by_remember_token(cookies[:remember_token] )
 	end
 end
