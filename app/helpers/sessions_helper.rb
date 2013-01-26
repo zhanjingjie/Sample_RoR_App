@@ -8,6 +8,11 @@ module SessionsHelper
 		self.current_user = user
 	end
 
+	def sign_out
+		self.current_user = nil
+		cookies.delete(:remember_token)
+	end
+
 	# Helper used by the view to test if the user is signed in
 	def signed_in?
 		!current_user.nil?
