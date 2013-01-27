@@ -15,22 +15,20 @@ describe "Authentication" do
   		describe "with invalid information" do
   			before { click_button "Sign in" }
   			it { should have_selector('title', text: 'Sign in') }
-  			it { should have_selector('div.alert.alert-error', text: 'Invalid') }
+        # The RSpec helper method is in spec utitlities
+  			it { should have_error_message('Invalid') }
 
   			# A nested test
   			describe "after visiting another page" do
   				before { click_link "Home" }
-  				it { should_not have_selector('div.alert.alert-error', text: 'Invalid') }
+  				it { should_not have_error_message('Invalid') }
   			end
   		end
 
   		describe "with valid information" do
   			let(:user) { FactoryGirl.create(:user) }
-  			before do
-  				fill_in "Email", with: user.email 
-  				fill_in "Password", with: user.password 
-  				click_button "Sign in"
-  			end
+        # The helper method is in spec utilities
+  			before { valid_signin(user) }
   			it { should have_selector('title', text: user.name) }
   			it { should have_link('Profile', href: user_path(user)) }
   			it { should have_link('Sign out', href: signout_path) }
