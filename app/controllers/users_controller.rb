@@ -11,11 +11,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    # Get the user info from the params hash
   	@user = User.new(params[:user])
   	if @user.save
       # after creating the user auto sign in.
       sign_in @user
   		flash[:success] = "Welcome to the Sample App!"
+      # redirect to the show page
   		redirect_to @user
   	else
   		render 'new'
