@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "UserPages" do
+describe "User Pages" do
  
   subject { page }
 
@@ -93,5 +93,4 @@ describe "UserPages" do
       end
     end
   end
-
 end
