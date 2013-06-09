@@ -10,15 +10,14 @@
             <!-- Will actually test if the current_user variable is nil or not. -->
             <% if signed_in? %>
               <li><%= link_to "Users", '#' %></li>
-              <!--
+              
               <li id="fat-menu" class="dropdown">
+
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  Account<b class="caret"></b>
+                  Account <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li>
-                  <!-- Use the helper method current_user, it will return the current signed-in user. -->
-                  <!--
                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                   <li class="divider"></li>
                   <li>
@@ -26,26 +25,10 @@
                   </li>
                 </ul>
               </li>
-            -->
-
-              
-              <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
           
             <% else %>
               <li><%= link_to "Sign in", signin_path %></li>
-            <% end %>
+          <% end %>
 
           </ul>
         </nav>
@@ -54,3 +37,4 @@
     <!-- close navbar-inner div -->
     </div>
   </header>
+
